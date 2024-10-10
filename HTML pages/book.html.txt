@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library</title>
+    
+</head>
+<body>
+    <h1>Libraries</h1>
+    <p>
+        Following are Libraries that provide student discounts.
+        <br>British Library
+        <br>Liverpool library
+        <br>Central Library
+    </p>
+    <img src="{% static 'images/lib.jpg' %}" alt="MyImage">
+    <p> <a href="{% url 'card' %}"> <input type="button" value="Booknow">  </a>  </p>
+    <p> <a href="{% url 'login_details' %}"> <input type="button" value="Back">  </a>  </p>
+</body>
+</html>

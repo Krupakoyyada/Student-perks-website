@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1> Congratulations!!! You Accepted your student card </h1>
+    <p> Click <a href="{% url 'WebPage1' %}"> here </a> to submit your details to get your card </p>
+    <p> <a href="{% url 'cards1' %}"> <input type="button" value="Back">  </a>  </p>
+    <img src="{% static 'images/sign.jpg' %}" alt="My Image1">
+</body>
+</html>

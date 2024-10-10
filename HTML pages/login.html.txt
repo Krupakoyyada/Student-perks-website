@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{% url 'WebPage2' %}">SignUp</a> </p>
+    <br>
+    <h3>You can Login only after Signing up. :)</h3>
+    <img src="{% static 'images/log.jpg' %}" alt="My Image1">
+    <p> <a href="{% url 'Homepage' %}"> <input type="button" value="Back">  </a>  </p>
+</body>
+</html>

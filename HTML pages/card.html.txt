@@ -1,0 +1,30 @@
+{% extends 'reject.html' %}
+
+{% block title %}Student Form Details{% endblock %}
+
+{% block content %}
+<h2>Student Form Details </h2>
+<form id="studentForm" method="post" action="{% url 'cards1' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Student Fullname:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="college">College or University Full Name:</label>
+        <input type="text" class="form-control" id="college" name="college" required>
+    </div>
+
+    <div class="form-group">
+        <label for="studentID">Student ID number:</label>
+        <input type="text" class="form-control" id="studentID" name="studentID" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="submitButton">Book your Student card</button>
+
+</form>
+<p> <a href="{% url 'login_details' %}"> <input type="button" value="Back">  </a>  </p>
+{% endblock %}
+
+

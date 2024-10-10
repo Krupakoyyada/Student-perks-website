@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     <h1>Booking confirmation</h1>
+</head>
+
+<body>
+    <div class="row">
+
+
+        <p> <a href="{% url 'Accept1' %}"> <input type="button" value="Accept">  </a>  </p>
+
+        <p> <a href="{% url 'Reject1' %}"> <input type="button" value="reject">  </a>  </p>
+        <br>
+        <br>
+        Congratulations!!!
+
+        <img src="{% static 'images/9.jpg' %}" alt="My Image1">
+    </div>
+    <p> <a href="{% url 'card' %}"> <input type="button" value="Back">  </a>  </p>
+</body>
+</html>
