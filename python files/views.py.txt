@@ -1,0 +1,104 @@
+from django.shortcuts import redirect,render
+import json
+from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from app123.forms import LogForm
+from app123.models import LogMessage
+from datetime import datetime
+
+def addMessage(request):
+    form=LogForm(request.POST or None)
+    if request.method=="POST" and form.is_valid():
+        message=form.save(commit=False)
+        message.log_date = datetime.now()
+        message.save()
+        return redirect(request,"Homepage.html")
+    else:
+        return render(request,"Homepage.html",{"form":form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('login_details') 
+            else:
+               
+                pass
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+def login_details_view(request):
+    # You can include additional logic here for the dashboard
+    return render(request, 'login_details.html')
+
+def WebPage2_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  
+    else:
+        form = UserCreationForm()
+    return render(request, 'WebPage2.html', {'form': form})
+
+
+def Homepage_view(request):
+    return render(request, 'Homepage.html')
+
+def login_details_view(request):
+    return render(request,'login_details.html')
+
+def bus_view(request):
+    return render(request, 'bus.html')
+
+def train_view(request):
+    return render(request, 'train.html')
+
+def mall_view(request):
+    return render(request, 'mall.html')
+
+def book_view(request):
+    return render(request, 'book.html')
+
+def card_view(request):
+     if request.method == 'POST':
+        
+        return redirect('cards1')  
+
+     return render(request, 'card.html')
+
+def cards1_view(request):
+    return render(request, 'cards1.html')
+
+def Accept_view(request):
+    if request.method == 'POST':
+       
+     return redirect('cards1') 
+
+    return render(request, 'Accept.html')
+
+def reject_view(request):
+    return render(request, 'reject.html')
+
+def images_view(request):
+    return render(request, 'showMessages.html')
+
+
+def Reject1_view(request):
+    return render(request, 'Reject1.html')
+
+def Accept1_view(request):
+    return render(request, 'Accept1.html')
+
+def WebPage1_view(request):
+    return render(request, 'WebPage1.html')
+
+def WebPage3_view(request):
+    return render(request, 'WebPage3.html')

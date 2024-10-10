@@ -1,0 +1,17 @@
+function increaseFontSize() {
+       const mainContents = document.getElementsByClassName('main');
+          
+    for (let i = 0; i < mainContents.length; i++) {
+            const currentFontSize = parseFloat(window.getComputedStyle(mainContents[i]).fontSize);
+    mainContents[i].style.fontSize = (currentFontSize + 2) + 'px';
+        }
+    }
+
+function decreaseFontSize() {
+        const mainContents = document.getElementsByClassName('main');
+
+     for (let i = 0; i < mainContents.length; i++) {
+            const currentFontSize = parseFloat(window.getComputedStyle(mainContents[i]).fontSize);
+    mainContents[i].style.fontSize = (currentFontSize - 2) + 'px';
+        }
+    }

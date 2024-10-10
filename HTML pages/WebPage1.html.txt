@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+    <h1>Please submit details to get your card</h1>
+    <form method="post" action="{% url 'WebPage3' %}">
+        {% csrf_token %}
+        
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="name" required><br>
+
+       
+        <label for="collegeName">Student College or University Name:</label>
+        <input type="text" id="collegeName" name="college" required><br>
+
+       
+        <label for="address">Complete Home Address:</label>
+        <textarea id="address" name="address" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <img src="{% static 'images/2.jpg' %}" alt="My Image1">
+</body>
+</html>

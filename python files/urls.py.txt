@@ -1,0 +1,55 @@
+"""
+DjangoWebProject1 URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.1/topics/http/urls/
+
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+
+# Uncomment next two lines to enable admin:
+#from django.contrib import admin
+from django.urls import path
+from app123 import views
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    # Uncomment the next line to enable the admin:
+    path("", views.addMessage, name="log1"),
+    path("log/", views.addMessage, name="log2"),
+    path('login/', views.login_view, name='login'),
+    path('Homepage/', views.Homepage_view, name='Homepage'),
+    path('login/', views.login_view, name='login'),
+    path('login_details/', views.login_details_view, name='login_details'),
+    path('WebPage2/', views.WebPage2_view, name='WebPage2'),
+    path('bus/', views.bus_view, name='bus'),
+    path('train/', views.train_view, name='train'),
+    path('mall/', views.mall_view, name='mall'),
+    path('book/', views.book_view, name='book'),
+    path('card/', views.card_view, name='card'),
+    path('cards1/', views.cards1_view, name='cards1'),
+    path('Accept/', views.Accept_view, name='Accept'),
+    path('reject/', views.reject_view, name='reject'),
+    path('images/', views.images_view, name='images'),
+    path('Accept1/', views.Accept1_view, name='Accept1'),
+   path('Reject1/', views.Reject1_view, name='Reject1'),
+   path('WebPage1/', views.WebPage1_view, name='WebPage1'),
+   path('WebPage3/', views.WebPage3_view, name='WebPage3'),
+   path('admin/', admin.site.urls),
+
+    
+    
+    
+    
+]
+

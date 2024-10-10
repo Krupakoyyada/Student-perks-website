@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Welcome to My Website  Student Perks</h1>
+    <title>Website 123</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HomePage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book">Book Your Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <p> Click <a href="{% url 'login' %}"> here </a> to login or signup </p>
+        <div class="image-container">
+            <img src="{% static 'images/perks.png' %}" alt="My Image1">
+            <img src="{% static 'images/2.jpg' %}" alt="My Image2">
+        </div>
+        <br>
+        <div class="container">
+            <img src="{% static 'images/3.jpg' %}" alt="My Image2">
+            <p> If you are a student, then this website is for you! Students have benefits in all sections of economy.If you have your ID and details, you can enjoy all the perks.have fun:)</p>
+        </div>
+        <section id="about">
+            <h2> About Us</h2>
+            <img src="{% static 'images/4.jpg' %}" alt="Image">
+            <p>
+                Our future always depends on students.so our website provides benefits to all students from first standard to post-graduates.we are from benefits society and our aim is to help
+                students in all aspects of society.we are providing this from past 20 years and continues for ever.<br> what all things we provide- > >
+            </p>
+        </section>
+        <button onclick="increaseFontSize()">Increase Font</button>
+        <button onclick="decreaseFontSize()">Decrease Font</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="{% static 'images/bus.jpg' %}" alt="Image 1" class="img-fluid">
+                </div>
+                <div class="col-sm-4">
+                    <img src="{% static 'images/trains.jpg' %}" alt="Image 2" class="img-fluid">
+                </div>
+                <div class="col-sm-4">
+                    <img src="{% static 'images/lib.jpg' %}" alt="Image 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{% static 'images/shop.jpg' %}" alt="Image 4" class="img-fluid">
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'images/Bank.jpg' %}" alt="Image 5" class="img-fluid">
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'images/events.jpg' %}" alt="Image 6" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <section id="book">
+        <h2> Book Your Card</h2>
+        <img src="{% static 'images/students.jpg' %}" alt="Image">
+        <p> To enjoy all benefits, first you should get the card.login to the page and then book your card. You need name, ID card and some university details for card</p>
+        <a href="{% url 'login' %}"> <h2> Book your card now</h2> </a>
+    </section>
+    {% block content %}
+    <!-- Here,The child template content will be inserted for further use of our template -->
+    {% endblock %}
+    <section id="contact">
+        <h2> Contact Us</h2>
+        <div class="container">
+            <img src="{% static 'images/3.jpg' %}" alt="Footer Image">
+            <p>
+                Email: studentbenefits@email.com
+                <br>
+                Mobile: 01234567899/
+                <br> 01123456789
+            </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <img src="{% static 'images/thank.jpg' %}" alt="Footer Image">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <br>
+
+
+   
+
+  </div>
+
+
+</body>
+</html>

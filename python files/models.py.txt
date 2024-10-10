@@ -1,0 +1,14 @@
+# models.py
+from django.db import models
+from django.utils import timezone
+
+class LogMessage(models.Model):
+    title = models.CharField(max_length=100)
+    message=models.TextField()
+    log_date = models.DateTimeField()
+
+    def to_dict(self):
+        return{'id':self.id, 'title':self.title,'message':self.message}
+
+    def __str__(self):
+        return "id:"+str(self.id)+ "title:"+self.title + "message:"+self.message

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Malls</title>
+   
+</head>
+<body>
+    <h1>Malls</h1>
+    <p>
+        Following are malls that provide student discounts.
+        <br>Friars Square
+        <br>Eden centre
+        <br>Metro centre
+    </p>
+    <img src="{% static 'images/shop.jpg' %}" alt="My Image1">
+    <p> <a href="{% url 'card' %}"> <input type="button" value="Booknow">  </a>  </p>
+    <p> <a href="{% url 'login_details' %}"> <input type="button" value="Back">  </a>  </p>
+</body>
+</html>
